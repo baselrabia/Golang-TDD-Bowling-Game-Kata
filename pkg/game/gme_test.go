@@ -34,4 +34,15 @@ func TestScore(t *testing.T) {
 		assert.Equal(t, 16, game.Score())
 	})
 
+
+	t.Run("a ten in two frames is not a spare", func(t *testing.T) {
+		game := NewGame()
+		game.Roll(3)
+		game.Roll(6)
+		game.Roll(4)
+		game.Roll(2)
+
+
+		assert.Equal(t, 15, game.Score())
+	})
  }
