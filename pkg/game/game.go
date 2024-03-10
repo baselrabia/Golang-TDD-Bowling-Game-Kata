@@ -18,13 +18,13 @@ func (g *Game) Roll(pins int) {
 func (g *Game) Score() int {
 	score := 0
 
-	for i := 0; i < len(g.rolled)-2; i++ {
+	for i := 0; i < len(g.rolled)-2; i+=2 {
 
 		if (g.rolled[i] + g.rolled[i+1] == 10) { //spare 
 			score += g.rolled[i+2]
 		}
 
-		score += g.rolled[i]
+		score += g.rolled[i] +  g.rolled[i+1]
 	}
 
 	return score
