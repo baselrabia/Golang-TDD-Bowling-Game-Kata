@@ -42,7 +42,16 @@ func TestScore(t *testing.T) {
 		game.Roll(4)
 		game.Roll(2)
 
-
 		assert.Equal(t, 15, game.Score())
+	})
+
+
+	t.Run("a strike add next two balls", func(t *testing.T) {
+		game := NewGame()
+ 		game.Roll(10)
+		game.Roll(3)
+		game.Roll(2)
+
+		assert.Equal(t, 20, game.Score())
 	})
  }
