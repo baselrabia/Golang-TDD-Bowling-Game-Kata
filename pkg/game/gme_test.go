@@ -54,4 +54,16 @@ func TestScore(t *testing.T) {
 
 		assert.Equal(t, 20, game.Score())
 	})
+
+
+	t.Run("the perfect game score is 300", func(t *testing.T) {
+		game := NewGame()
+
+		for i := 0; i < 12; i++ {
+			game.Roll(10)
+	
+		}
+
+		assert.Equal(t, 300, game.Score())
+	})
  }

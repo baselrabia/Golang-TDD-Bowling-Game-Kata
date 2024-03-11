@@ -35,5 +35,5 @@ func (g *Game) Score() int {
 
 	}
 
-	return score
+	return score 
 }
